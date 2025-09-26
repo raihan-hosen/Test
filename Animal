@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char animal[20], class[20], food[20];
+    char animal_type1[]="vertebrado", animal_type2[]="invertebrado";
+    char class1[]="ave", class2[]="mamifero", class3[]="inseto", class4[]="anelideo";
+    char food1[]="carnivoro", food2[]="onivoro",food3[]="herbivoro", food4[]="hematofago";
+
+    scanf("%s", animal);
+    scanf("%s", class);
+    scanf("%s", food);
+
+    if(strcmp(animal,animal_type1)==0){
+        if(strcmp(class,class1)==0){
+            if(strcmp(food,food1)==0){
+                printf("aguia\n");
+            }
+            else if(strcmp(food,food2)==0){
+                printf("pomba\n");
+            }
+        }
+        else if(strcmp(class,class2)==0){
+            if(strcmp(food,food2)==0){
+                printf("homem\n");
+            }
+            else if(strcmp(food,food3)==0){
+                printf("vaca\n");
+            }
+        }
+    }
+    else if(strcmp(animal,animal_type2)==0){
+        if(strcmp(class,class3)==0){
+            if(strcmp(food,food4)==0){
+                printf("pulga\n");
+            }
+            else if(strcmp(food,food3)==0){
+                printf("lagarta\n");
+            }
+        }
+        else if(strcmp(class,class4)==0){
+            if(strcmp(food,food4)==0){
+                printf("sanguessuga\n");
+            }
+            else if(strcmp(food,food2)==0){
+                printf("minhoca\n");
+            }
+        }
+    }
+    return 0;
+}
