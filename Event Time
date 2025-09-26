@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int start_day, end_day;
+    int sh, sm, ss; // start time
+    int eh, em, es; // end time
+
+    // Read exactly as specified, tolerating spaces around colons
+    if (scanf("Dia %d", &start_day) != 1) return 0;
+    if (scanf("%d : %d : %d", &sh, &sm, &ss) != 3) return 0;
+    if (scanf(" Dia %d", &end_day) != 1) return 0;      // leading space to skip newline
+    if (scanf("%d : %d : %d", &eh, &em, &es) != 3) return 0;
+
+    // Convert to total seconds from day 0
+    long long start_seconds = (long long)start_day * 86400LL + (long long)sh * 3600LL + (long long)sm * 60LL + ss;
+    long long end_seconds   = (long long)end_day   * 86400LL + (long long)eh * 3600LL + (long long)em * 60LL + es;
+
+    long long duration = end_seconds - start_seconds;
+    if (duration < 0) duration = 0; // guard (shouldn't happen if end >= start)
+
+    int days = (int)(duration / 86400LL);
+    duration %= 86400LL;
+
+    int hours = (int)(duration / 3600LL);
+    duration %= 3600LL;
+
+    int minutes = (int)(duration / 60LL);
+    int seconds = (int)(duration % 60LL);
+
+    printf("%d dia(s)\n", days);
+    printf("%d hora(s)\n", hours);
+    printf("%d minuto(s)\n", minutes);
+    printf("%d segundo(s)\n", seconds);
+
+    return 0;
+}
