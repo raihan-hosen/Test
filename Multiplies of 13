@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int X, Y, start, end, total_sum = 0;
+    scanf("%d %d", &X, &Y);
+
+    if (X < Y) {
+        start = X;
+        end = Y;
+    } else {
+        start = Y;
+        end = X;
+    }
+
+    for (int i = start; i <= end; i++) {
+        if (i % 13 != 0) {
+            total_sum += i;
+        }
+    }
+
+    printf("%d\n", total_sum);
+    return 0;
+}
