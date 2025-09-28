@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int N, amount;
+    char type;
+    int total = 0, rabbits = 0, rats = 0, frogs = 0;
+
+    scanf("%d", &N); // Number of test cases
+
+    for (int i = 0; i < N; i++) {
+        scanf("%d %c", &amount, &type);
+
+        if (type == 'C') {
+            rabbits += amount;
+        } else if (type == 'R') {
+            rats += amount;
+        } else if (type == 'S') {
+            frogs += amount;
+        }
+
+        total += amount;
+    }
+
+    // Calculate percentages
+    double percent_rabbits = (double)rabbits / total * 100.0;
+    double percent_rats = (double)rats / total * 100.0;
+    double percent_frogs = (double)frogs / total * 100.0;
+
+    // Output results
+    printf("Total: %d cobaias\n", total);
+    printf("Total de coelhos: %d\n", rabbits);
+    printf("Total de ratos: %d\n", rats);
+    printf("Total de sapos: %d\n", frogs);
+    printf("Percentual de coelhos: %.2lf %%\n", percent_rabbits);
+    printf("Percentual de ratos: %.2lf %%\n", percent_rats);
+    printf("Percentual de sapos: %.2lf %%\n", percent_frogs);
+
+    return 0;
+}
