@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    unsigned long long a = 0, b = 1, next;
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        if (i == n - 1)
+            printf("%llu\n", a);
+        else
+            printf("%llu ", a);
+
+        next = a + b;
+        a = b;
+        b = next;
+    }
+
+    return 0;
+}
