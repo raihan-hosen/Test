@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int x, z;
+    int sum = 0, count = 0;
+
+    scanf("%d", &x);
+
+    // Keep reading Z until Z > X
+    do {
+        scanf("%d", &z);
+    } while (z <= x);
+
+    sum = 0;
+    count = 0;
+
+    // Sum consecutive integers starting from X until sum > Z
+    while (sum <= z) {
+        sum += x + count;
+        count++;
+    }
+
+    printf("%d\n", count);
+
+    return 0;
+}
